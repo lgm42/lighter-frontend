@@ -1,0 +1,93 @@
+body, html {
+	height: 100%;
+	background-color: black;
+}
+
+.bg { 
+    /* The image used */
+    background-image: url("background1.jpg");
+
+    /* Full height */
+	height: 100%; 
+	width: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+	background-size: cover;
+	max-width: initial !important;
+}
+
+.semi-transparent-container {
+	background: rgba(204, 204, 204, 0.5);
+	text-align: center;
+	padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.container {
+	text-align: center;
+}
+.title {
+	text-align: center;
+}
+
+.lower-card {
+	height: 250px;
+}
+
+#time {
+	margin-left: 10px;
+}
+
+.toast {
+	background-color: #FFCDD2 !important;
+}
+
+nav {
+	background-color: rgba(255, 255, 255, 0.17);
+	font-size: 30px;
+}
+
+.rs-control {
+	text-align: center;
+	margin:	auto;
+}
+
+.rs-control .rs-range-color {
+    background-color: #e0d554;
+}
+.rs-control .rs-path-color {
+    background-color: #d4d4d4;
+}
+.rs-control .rs-handle:after {
+    background-color: #d4cd11;
+}
+.rs-control .rs-bg-color {
+    background-color: #ffffff;
+}
+
+.rs-tooltip-text {
+	color: black;
+	font-size: 2em !important; 
+}
+
+.ct-series-a .ct-area {
+	fill: rgba(247, 250, 213, 0.822) !important;
+	stroke: rgb(227, 243, 169) !important;
+}
+
+.ct-series-a .ct-line {
+	stroke: rgb(204, 245, 56) !important;
+}
+
+.ct-line {
+	stroke-width: 2px !important;
+}
+
+.ct-series-a .ct-point {
+	stroke: rgb(227, 243, 169) !important;
+}
+.ct-area {
+	fill-opacity: 0.5!important;
+}
