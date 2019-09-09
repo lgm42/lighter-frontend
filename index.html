@@ -107,7 +107,7 @@
         if (ENV_PROD) {
             URI = document.location.origin + "/";
         } else {
-            URI = "http://192.168.0.66/";
+            URI = "http://192.168.0.73/";
         }
         
         var poolingtimer;
@@ -195,11 +195,11 @@
             //on change de mode
             var mode;
             if ($('#mode').is(':checked')) {
-                $.get(URI + "rest/mode/auto");
+                $.get(URI + "rest/mode?value=auto");
             } else {
-                $.get(URI + "rest/mode/manual");
+                $.get(URI + "rest/mode?value=manual");
                 //on envoie égalemenet la valeur courante
-                $.get( URI + "rest/led/" + slider.getValue());
+                $.get( URI + "rest/led?value=" + slider.getValue());
             }
         });
 
@@ -286,7 +286,7 @@
             circleShape: "half-top",
         
             change: function (args) {
-                $.get( URI + "rest/led/" + slider.getValue());
+                $.get( URI + "rest/led?value=" + slider.getValue());
             }
         }).data("roundSlider"); 
 
@@ -325,13 +325,13 @@
 
         $("#validate-configuration-btn").click(function() {
             $('#configuration-modal').modal('close');
-            $.get( URI + "rest/param/time-start/" + timeToSimestamp($("#txt-date-start").val()))
+            $.get( URI + "rest/param?name=time-start;value=" + timeToSimestamp($("#txt-date-start").val()))
             .done(() => {
-                $.get( URI + "rest/param/time-end/" + timeToSimestamp($("#txt-date-end").val()))
+                $.get( URI + "rest/param?name=time-end;value=" + timeToSimestamp($("#txt-date-end").val()))
                 .done(() => {
-                    $.get( URI + "rest/param/start-duration/" + $("#txt-start-duration").val())
+                    $.get( URI + "rest/param?name=start-duration;value=" + $("#txt-start-duration").val())
                     .done(() => {
-                        $.get( URI + "rest/param/end-duration/" + $("#txt-end-duration").val())
+                        $.get( URI + "rest/param?name=end-duration;value=" + $("#txt-end-duration").val())
                         .done(() => {
                             Materialize.toast("Parameters saved", 3000);
                         });
